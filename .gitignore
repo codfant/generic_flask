@@ -1,0 +1,12 @@
+*.egg-info
+*.idea
+*.pyc
+*venv/
+.cache/
+.git
+__pycache__
+*.iml
+*.rdb
+.cache/*
+nohup.out
+*.log
