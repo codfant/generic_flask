@@ -2,5 +2,5 @@
   "logging_level":"DEBUG",
   "ssl":"False",
   "say_me": "Flask",
-  "server_port": "32989"
+  "server_port": "32988"
 }
