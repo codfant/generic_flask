@@ -12,9 +12,11 @@ codfant@blah $ python3.6 flask_app.py
 
 ## How to generate a self signed cert... ##
 
-openssl genrsa -out server.key 1024
-openssl req -new -key server.key -out server.csr
-openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
+openssl genrsa -out server.key 1024  
+
+openssl req -new -key server.key -out server.csr  
+
+openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt  
 
 
 EXAMPLE:

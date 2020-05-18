@@ -1,7 +1,8 @@
 import sys, os
 sys.path.append('..')
-from flask import render_template, Flask, redirect
+from flask import render_template, Flask, redirect, request
 from config import config_dict
+import json
 
 conf_dict = config_dict()
 
@@ -15,7 +16,14 @@ def main_reroute():
 
 @app.route('/index.html', methods=['GET'])
 def index_html():
-    return render_template('index.html', flask=conf_dict['say_me'])
+    animals = {"Dog": "Bark!", "Cat": "Meow!", "Cow": "Moo!", "Crow": "caw!"}
+    to_js_array = json.dumps(animals)
+    return render_template('index.html', flask=conf_dict['say_me'], meta_tag=to_js_array)
+
+@app.route('/animal_noise.html', methods=['POST'])
+def animal_noises():
+    animal_noise = request.form['animal_dropdown']
+    return render_template('animal_noise.html', animal_noise=animal_noise)
 
 def main():
     HOST = os.getenv('SERVER_HOST', '0.0.0.0')

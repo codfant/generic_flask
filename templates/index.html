@@ -1,3 +1,16 @@
+<head>
+    <meta id="javascript_array" meta_tag="{{meta_tag}}">
+    </head>
+<script src="/static/js_file.js">
+</script>
+<body onload="read_meta_tag()">
 <h1>
     Hello from {{ flask }}!
 </h1>
+<form action="/animal_noise.html" method="post" enctype="multipart/form-data">
+<select name="animal_dropdown" id="animal_dropdown">
+    <option selected="true">Select An Animal</option>
+</select>
+    <input type="submit" value="Submit">
+</form>
+</body>
