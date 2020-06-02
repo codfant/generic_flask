@@ -12,6 +12,8 @@ codfant@blah $ python3.6 flask_app.py
 
 ## How to generate a self signed cert... ##
 
+As a side note, if you are going to use HTTPS, as best practice please generate a new certificate. Don't use the one included with this project. The certificate is merely included to give an example of a working HTTPS version.
+
 openssl genrsa -out server.key 1024  
 
 openssl req -new -key server.key -out server.csr  
